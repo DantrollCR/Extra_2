@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Observer.dir/main.cpp.o CMakeFiles/Observer.dir/ASubject.cpp.o CMakeFiles/Observer.dir/DummyProduct.cpp.o CMakeFiles/Observer.dir/SocialMedia.cpp.o  -o Observer 

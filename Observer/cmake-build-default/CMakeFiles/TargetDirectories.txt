@@ -1,0 +1,3 @@
+/home/aykull/CLionProjects/Observer/cmake-build-default/CMakeFiles/edit_cache.dir
+/home/aykull/CLionProjects/Observer/cmake-build-default/CMakeFiles/rebuild_cache.dir
+/home/aykull/CLionProjects/Observer/cmake-build-default/CMakeFiles/Observer.dir

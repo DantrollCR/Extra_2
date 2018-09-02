@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/aykull/CLionProjects/Observer/IObserver.h
+
+/home/aykull/CLionProjects/Observer/SocialMedia.cpp
+SocialMedia.h
+/home/aykull/CLionProjects/Observer/SocialMedia.h
+
+/home/aykull/CLionProjects/Observer/SocialMedia.h
+iostream
+-
+string
+-
+IObserver.h
+/home/aykull/CLionProjects/Observer/IObserver.h
+
