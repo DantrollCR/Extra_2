@@ -1,6 +1,8 @@
 #include <iostream>
 #include "facade.cpp"
 #include "builder.cpp"
+#include "AbstractF.cpp"
+#include "AdapterC.cpp"
 
 using namespace std;
 
@@ -93,10 +95,31 @@ int main() {
                 break;
             case 4:{
 
+                int opca;
+                bool flaga = true;
+
+                while(flaga) {
+                    cout << "     Bienvenido!!" << endl;
+                    cout << "Que automovil desea:" << endl;
+                    cout << "1-Lamborguini Diablo" << endl;
+                    cout << "2-LandRover Dicovery" << endl;
+                    cout << "3-Salir" << endl;
+                    cin >> opca;
+                    if (opca == 1) {
+                        Application application(getFActory("Lambo"));
+                    } else if (opca == 2) {
+                        Application application(getFActory("SUV"));
+                    } else {
+                        flaga = false;
+                    }
+                }
+
             }
                 break;
             case 5:{
-
+                cout << "Bienvenido a tu reproductor de video" << endl;
+                Funcion funcion;
+                funcion.funcionReproductor();
             }
                 break;
             case 6:{
