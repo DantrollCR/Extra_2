@@ -1,84 +1,79 @@
 //
 // Created by dantroll on 9/2/18.
 //
-#include "AbstractF.h"
-#include <iostream>
 
 using namespace std;
+
 // Abstract product
-class Carro
-{
+class Carro {
 public:
-    virtual void readModel()=0;
-    virtual void readYear()=0;
+    virtual void readModel() = 0;
+
+    virtual void readYear() = 0;
 };
+
 //Se hace una clase para un carro específico, un Lamborguini
- class Lambo:public Carro
-{
+class Lambo : public Carro {
 public:
     Lambo() {}
-    void readModel()
-    {
-        cout << "Soy un Lamborguini Diablo"<<endl;
+
+    void readModel() {
+        cout << "Soy un Lamborguini Diablo" << endl;
     }
-    void readYear()
-    {
-        cout << "Y soy año 2018"<<endl;
+
+    void readYear() {
+        cout << "Y soy año 2018" << endl;
     }
 };
 
 //Una clases para un auto SUV
-class SUV:public Carro
-{
+class SUV : public Carro {
 public:
     SUV() {}
-    void readModel()
-    {
-        cout << "Soy un LandRover Dicovery"<<endl;
+
+    void readModel() {
+        cout << "Soy un LandRover Dicovery" << endl;
     }
-    void readYear()
-    {
-        cout << " Soy año 2003"<<endl;
+
+    void readYear() {
+        cout << " Soy año 2003" << endl;
     }
 };
 
 // Abstract Factory de Carros
-class FabricaCarros
-{
+class FabricaCarros {
 public:
-    virtual Carro* getProduct()=0;
+    virtual Carro *getProduct() = 0;
 };
+
 // Fabrica de un Lmborguini
-class LamboFactory:public FabricaCarros
-{
+class LamboFactory : public FabricaCarros {
 public:
-    Carro* getProduct()
-    {
-        return new Lambo();
+    Carro *getProduct() {
+        return new Lambo ();
     }
-    ~LamboFactory(){}
+
+    ~LamboFactory() {}
 };
+
 // Fabrica de un SUV
-class SUVFactory:public FabricaCarros
-{
+class SUVFactory : public FabricaCarros {
 public:
-    Carro* getProduct()
-    {
-        return new SUV();
+    Carro *getProduct() {
+        return new SUV ();
     }
-    ~SUVFactory(){}
+
+    ~SUVFactory() {}
 };
 
 
-
-class Application
-{
+class Application {
 public:
-    Application(FabricaCarros* factory)
-    {
-        Carro* product = factory->getProduct();
-        product->readModel();
-        product->readYear();
+    Application(FabricaCarros *factory) {
+        cout << "Abstract Factory: \n" << endl;
+        Carro *product = factory->getProduct ();
+        product->readModel ();
+        product->readYear ();
         delete product;
         delete factory;
     }
