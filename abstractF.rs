@@ -23,8 +23,7 @@ trait Factory<C: Cellphone, L: Laptop> {
 
 
 /*
- * Define our Apple products. Normally these structs would contain a lot more
- * data.
+ * Ahora se ponen algunos productos, se puede tomar como productos de apple.
  */
 struct IPhone;
 
@@ -66,8 +65,7 @@ impl Factory<IPhone, MAC> for AppleFactory {
 }
 
 /*
- * Define our Google products. Like with Apple's products, these are
- * simplified.
+ *Y como antes, ahora se definen productos de google.
  */
 
 struct Pixel;
@@ -90,12 +88,12 @@ impl Laptop for Chromebook {
     }
 
     fn edit_videos(&self)  {
-        println!("Just playing some games on my Chromebook.");
+        println!("Just editing videos on my Chromebook.");
     }
 }
 
 /*
- * Create GoogleFactory and implement it for our Google devices
+ * Se crea la GoogleFacroty, para definir los poducto que puede hacer
  */
 struct GoogleFactory;
 
@@ -110,7 +108,7 @@ impl Factory<Pixel, Chromebook> for GoogleFactory {
 }
 
 
-pub fn esto() {
+pub fn Run() {
     // Se crean dos Factory's.
     let apple = AppleFactory;
     let google = GoogleFactory;
@@ -118,15 +116,13 @@ pub fn esto() {
     // Las dos fabricas usan la misma interfaz, entonces ahora la usaremos.
 
 
-
-    // Test out creating phones
+//Probando si funciona correctamente todo.
     let cellphone = apple.new_cellphone();
     cellphone.call();
 
     let cellphone = google.new_cellphone();
     cellphone.call();
 
-    // Test out creating tablets
     let laptop = apple.new_laptop();
     laptop.play_games();
 
