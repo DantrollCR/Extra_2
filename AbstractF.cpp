@@ -81,3 +81,11 @@ public:
         delete factory;
     }
 };
+
+FabricaAutomovils* getFActory(const string FactoryID)
+{
+    if(FactoryID == "Lambo")
+        return new LamboFactory();
+    else
+        return new SUVFactory();
+}
