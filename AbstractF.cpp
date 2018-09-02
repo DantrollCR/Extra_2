@@ -2,18 +2,21 @@
 // Created by dantroll on 9/2/18.
 //
 
-using namespace std;
 
 // Abstract product
-class Carro {
+#include <iostream>
+
+using namespace std;
+
+class Automovil {
 public:
     virtual void readModel() = 0;
 
     virtual void readYear() = 0;
 };
 
-//Se hace una clase para un carro específico, un Lamborguini
-class Lambo : public Carro {
+//Se hace una clase para un Automovil específico, un Lamborguini
+class Lambo : public Automovil {
 public:
     Lambo() {}
 
@@ -27,7 +30,7 @@ public:
 };
 
 //Una clases para un auto SUV
-class SUV : public Carro {
+class SUV : public Automovil {
 public:
     SUV() {}
 
@@ -40,16 +43,16 @@ public:
     }
 };
 
-// Abstract Factory de Carros
-class FabricaCarros {
+// Abstract Factory de Automovils
+class FabricaAutomovils {
 public:
-    virtual Carro *getProduct() = 0;
+    virtual Automovil *getProduct() = 0;
 };
 
 // Fabrica de un Lmborguini
-class LamboFactory : public FabricaCarros {
+class LamboFactory : public FabricaAutomovils {
 public:
-    Carro *getProduct() {
+    Automovil *getProduct() {
         return new Lambo ();
     }
 
@@ -57,9 +60,9 @@ public:
 };
 
 // Fabrica de un SUV
-class SUVFactory : public FabricaCarros {
+class SUVFactory : public FabricaAutomovils {
 public:
-    Carro *getProduct() {
+    Automovil *getProduct() {
         return new SUV ();
     }
 
@@ -69,9 +72,9 @@ public:
 
 class Application {
 public:
-    Application(FabricaCarros *factory) {
+    Application(FabricaAutomovils *factory) {
         cout << "Abstract Factory: \n" << endl;
-        Carro *product = factory->getProduct ();
+        Automovil *product = factory->getProduct ();
         product->readModel ();
         product->readYear ();
         delete product;
